@@ -29,7 +29,7 @@ EC 1.17.1.9
 formate + NAD+ = CO2 + NADH
 ```
 
-# C1 - Formate conversion
+## C1 - Formate conversion
 `formate -> 5,10-methylene-THF`
 
 In the C1 module, formate is converted to a more familiar molecule, 5,10-methylene-THF, for entry into the C2 module and C3 module. 
@@ -48,9 +48,9 @@ EC 1.5.1.5 - methylenetetrahydrofolate dehydrogenase:
 
 ```
 
-# C2 - Glycine cleavage system / synthase
+## C2 - Glycine cleavage system / synthase
 
-`methylene-THF + CO2 + NH3 -> glycine`
+`5,10-methylene-THF + CO2 -> glycine`
 
 In the C2 module, 5,10-methylene-THF is converted into glycine. Glycine can be used as an amino acid, or given to the C3 module for further conversion.
 
@@ -73,7 +73,7 @@ EC 1.8.1.4 - L protein:
 H(2) + NAD+ = H(0) + NADH + H+
 ```
 
-# C3 - Serine and pyruvate synthesis
+## C3 - Serine and pyruvate synthesis
 
 `glycine + methylene-THF -> serine + pyruvate`
 
