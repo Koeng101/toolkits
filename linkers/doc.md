@@ -7,6 +7,55 @@ The Linkers Collection is a collection of linkers ([here](https://doi.org/10.338
 - The BsaI overhangs are optimized using [empirical data](https://doi.org/10.1371/journal.pone.0238592)
 - The assembly is recursive - the same linkers are used at each level of assembly. This is accomplished using methyltransferases which [methylate at CCGG positions](http://www.greatlakesbiotech.org/news/2016/8/26/designing-a-low-cost-molecular-biology-platform)
 
+# Examples
+
+In the future, I would like visual examples for all of the following, but for now these text descriptions are enough (KG, 18 Dec 2020).
+
+## Level 1 Assembly
+
+Linkers can be used in Level 1 assmblies as follows:
+
+### TU assembly
+```
+TU assembly:
+1 [linker forward] 2 [promoter] 3 [RBS] 4 [CDS] 5 [terminator] 6 [linker reverse] 7... [vector] ...24
+```
+Each independent TU can then be combined based off of their forward and reverse linkers. 
+
+### Operon assembly
+```
+Operon assembly (first):
+1 [linker forward] 2 [promoter] 3 [RBS] 4 [CDS] 5 [linker reverse] 7... [vector] ...24
+
+Operon assembly (mid):
+1 [linker forward] 3 [RBS] 4 [CDS] 5 [linker reverse] 7... [vector] ...24
+
+Operon assembly (last):
+1 [linker forward] 3 [RBS] 4 [CDS] 5 [terminator] 6 [linker reverse] 7... [vector] ...24
+```
+The first operon component, X number of mid operon components, and the last operon component can then be combined based off of their forward and reverse linkers. 
+
+## Level X Assembly
+
+Linkers can also be used to do more funky assemblies:
+
+### Backbone part construction
+```
+1 [linker forward (7)] 2 [promoter] 3 [RBS] 4 [Kanamycin resistance] 5 [terminator] 6 [linker reverse (8)] 7 [negative selection marker] 8... [vector] ...24
+After assembly: 
+7 [Kanamycin resistance] 8
+```
+
+### Reversing during construction
+```
+Simplified transcription unit now represented by `-->`
+
+1( ----> )2 + -3( --> )-2 + 3( -> )4 = ( ----> <-- -> )
+```
+
+# FAQ
+(Disclaimer - I don't know if these are the actual questions which would be frequently asked)
+
 ## How were the linkers designed?
 
 TL;DR: I took the empirically most efficient overhangs and based linkers off of them
@@ -29,12 +78,7 @@ Each overhang is assigned a number. The reverse complement of each overhang is r
 
 Linkers are named with a 3 number + 1 letter scheme, separated by underscores ( _ ) in the format X_X_XY. The first 2 numbers describe the two overhangs which the linker itself will be cut out with, the third number describes the overhang which the linker will introduce to the construct, and the final letter (F or R) describes the direction, forward or reverse. After a GoldenGate assembly and transformation, anything between the forward and reverse linkers can be cut out with BsaI and used in another assembly. 
 
-For example:
-```
-1( ----> )2 + -3( --> )-2 + 3( -> )4 = ( ----> <-- -> )
-```
-
-## How can you use BsaI in two reactions?
+## How can you use BsaI in two reactions? Wouldn't the linker be cut during the first?
 
 The 3rd internal BsaI site is actually CCGGTCTC instead of only GGTCTC. While BsaI will cut at both sequences, you can methylate CCGG with [HpaII or MspI](http://www.greatlakesbiotech.org/news/2016/8/26/designing-a-low-cost-molecular-biology-platform) and prevent the cutting at CCGGTCTC sites. After assembly and transformation, the CCGGTCTC site will no longer be replicated in the presence of HpaII or MspI, therefore allowing it to be cut.
 
