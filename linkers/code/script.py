@@ -88,10 +88,10 @@ def generate_fragments():
     final_cores = []
     for chunk in chunks(cores,4):
         current_cores = []
-        current_cores.append("GCGAAGAC" + "NN" + chunk[0] + "NN" +"GTCTTCNN")
+        current_cores.append("GTAAAACGACGGCCAGT" + "GCGAAGAC" + "NN" + chunk[0] + "NN" +"GTCTTCNN")
         current_cores.append("CGGCGATG" + "NNNNNNNNNA" + chunk[1] + "NNNNNNNNN" + "ACATCGCNN")
         current_cores.append("ATGAAGAC" + "NN" + chunk[2] + "NN" +"GTCTTCNN")
-        current_cores.append("TAGCGATG" + "NNNNNNNNNA" + chunk[3] + "NNNNNNNNN" + "ACATCGCNN")
+        current_cores.append("TAGCGATG" + "NNNNNNNNNA" + chunk[3] + "NNNNNNNNN" + "ACATCGC" + "GTCATAGCTGTTTCCTG")
         x = []
         for c in current_cores:
             new_core = ""
