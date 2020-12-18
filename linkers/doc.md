@@ -41,7 +41,7 @@ Linkers can also be used to do more funky assemblies:
 
 ### Backbone part construction
 ```
-1 [linker forward (7)] 2 [promoter] 3 [RBS] 4 [Kanamycin resistance] 5 [terminator] 6 [linker reverse (8)] 7 [negative selection marker] 8... [vector] ...24
+1 [linker forward (7)] 2 [promoter] 3 [RBS] 4 [Kanamycin resistance coding sequence] 5 [terminator] 6 [linker reverse (8)] 7 [negative selection marker] 8... [vector] ...24
 After assembly: 
 7 [Kanamycin resistance] 8
 ```
