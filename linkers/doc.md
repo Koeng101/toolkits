@@ -82,7 +82,7 @@ Linkers are named with a 3 number + 1 letter scheme, separated by underscores ( 
 
 The 3rd internal BsaI site is actually CCGGTCTC instead of only GGTCTC. While BsaI will cut at both sequences, you can methylate CCGG with [HpaII or MspI](http://www.greatlakesbiotech.org/news/2016/8/26/designing-a-low-cost-molecular-biology-platform) and prevent the cutting at CCGGTCTC sites. After assembly and transformation, the CCGGTCTC site will no longer be replicated in the presence of HpaII or MspI, therefore allowing it to be cut.
 
-To initially get methylation at the CCGG sites, you either need to express HpaII methyltransferase within the cell line containing the linker plasmids, or methylate using purified enzymes (for example, from [NEB](https://www.neb.com/products/m0214-hpaii-methyltransferase). 
+To initially get methylation at the CCGG sites, you either need to express HpaII methyltransferase within the cell line containing the linker plasmids, or methylate using purified enzymes (for example, from [NEB](https://www.neb.com/products/m0214-hpaii-methyltransferase)). While both MspI and HpaII can methylate and block binding of BsaI, HpaII is a better choice since it can be deactivated easily with heat.  
 
 # Overhang table
 
