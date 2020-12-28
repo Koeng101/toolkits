@@ -44,4 +44,33 @@ ccdB and sacB are for building prebuilt vectors - this is useful for when you us
 
 In order to not have conflicting selections, the markers will be split up, and you'll have to reassemble them using GoldenGate at build time. This is so I don't have to manage the complexity of negative selection on builds with those parts. Easier to add 2 different parts than to have sucrose and non-sucrose plates (if I wanted to build a ccdB prebuilt vector from sacB-resistance marker plasmids).
 
+## Backbone definitions
+
+All of these parts are GoldenGate compatible. Please look at the "linkers" toolkit for more information on the overhangs. Generally, these parts follow the schema of the [Open Yeast Collection](https://docs.google.com/spreadsheets/d/1hhiKwaTJyWajH1fEUxZ_79DP4TRtlCBLvO6EtcqtxeY/edit#gid=1869543333) with alternative definitions.
+
+Backbones are defined with 6 parts:
+
+1. Flank forward
+2. Package
+3. E.coli selection part 1
+4. E.coli selection part 2
+5. E.coli origin of replication
+6. Flank reverse (or target origin of replication)
+7. Target selection
+
+Flank forward is either a homology flank, or just a random insert. 
+
+
+## What are the overhangs?
+
+The numbering system may be a little confusing - this is because the numbers assigned to overhangs are iterated by efficiency, and so we want most of the reactions to be as efficient as possible. Flank forward will only be used in reactions for building integration vectors, which is less common than just building plasmids. That part is therefore usually left out, and can instead there can just be a (Package) that is defined as `7 (Package) 8`, rather than `13 (Package) 8`.
+
+`7 (Flank forward) 13 (Package) 8 (E.coli selection part 1) 9 (E.coli selection part 2) 10 (E.coli origin of replication) 11 (Flank reverse) 12 (Target selection) 1`
+
+Or, replacing the numbers with sequence overhangs:
+
+`ATAG (Flank forward) TAAC (Package) ATGA (E.coli selection part 1) AGAC (E.coli selection part 2) AGGT (E.coli origin of replication) ACAA (Flank reverse) ACTC (Target selection) AAAA`
+
+9, or AGAC, is particularly suited for E.coli selection part 1-2, since it is the only overhang that may not contain a BsaI cut site on either side, but may still encode it together (since the complement of AGAC is GTCT, the core of G(GTCT)C. Luckily, this can easily be checked by looking at the end protein, since you're never going to combine different selection-1 and selection-2s together.
+
 
