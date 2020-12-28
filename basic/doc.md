@@ -73,4 +73,4 @@ Or, replacing the numbers with sequence overhangs:
 
 9, or AGAC, is particularly suited for E.coli selection part 1-2, since it is the only overhang that may not contain a BsaI cut site on either side, but may still encode it together (since the complement of AGAC is GTCT, the core of G(GTCT)C. Luckily, this can easily be checked by looking at the end protein, since you're never going to combine different selection-1 and selection-2s together.
 
-
+Overhang 13 will be reserved for two-part builds of negative selection markers like ccdB. It's a nice number, since it's pretty unlucky for the cell.
